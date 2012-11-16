@@ -32,7 +32,7 @@ public class SampleAdventure {
                     aliveState)
             .build();
         
-        Adventure adventure = new Adventure(firstState, "You open your eyes. Your body aches and " +
+        TextyAdventure adventure = new CLIAdventure(firstState, "You open your eyes. Your body aches and " +
         		"your head feels numb. You see nothing but darkness. You climb to your feet and see " +
         		"a pair of eyes and a pale face.");
         adventure.play();
