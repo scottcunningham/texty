@@ -1,7 +1,9 @@
 Texty is a small, simple text adventure engine written in Java. 
 
-It mostly exists as an excercise for me to practice my Java - it's been a while
+It mostly exists as an exercise for me to practice my Java - it's been a while
 since I wrote some!
 
 State initialisation is still rather clunky, but I'm hoping to fix this if
 I ever look at this code again. :)
+
+To-do: To ease initialisation, devise a small mark-up language and parse it. Or maybe use XML or JSON or similar.
