@@ -1,0 +1,51 @@
+Adventure {
+  openingText:"You open your eyes. Your body aches and your head feels numb. You see nothing but darkness. You climb to your feet and see a pair of eyes and a pale face."
+  State "deadState" {
+    openingText:"You died",
+  }
+  State "neverAliveState" {
+    openingText:"You were never alive",
+  }
+  State "winningState" {
+    openingText:"You have tricked the demon. Congratulations!",
+  }
+  State "quizState" {
+    openingText:"Hmm... Well then you must pass a test of wit. SCREAM!",
+    nextState {
+      name:"winningState",
+      whenInput:"aah!",
+      narration:"You scream at the top of your lungs. The beast recoils and the sky clears... nothing is dark anymore. Go home."
+    }
+    nextState {
+      name:"deadState",
+      whenInput:"",
+      narration:"You decide not to be the victim of the beast's game. You crouch, silent, for fear of waking him. The figure steps up to and kicks your face. Bloody and broken, you lay there and die."
+    }
+  }
+  State "aliveState" {
+    openingText:"Great! You're alive. Do you want me to fix that?",
+    nextState {
+      name:"deadState",
+      whenInput:"yes",
+      narration:"You nod. The beast takes a step forward, and places a finger on your lips. You feel faint..."
+    }
+    nextState {
+      name:"quizState",
+      whenInput:"no",
+      narration:"You shrug and shake your head."
+    }  
+  }
+  State "firstState" {
+    openingText:"Hello! Are you alive?",
+    nextState {
+      name:"neverAliveState",
+      whenInput:"no",
+      narration:"You lie there, limp and dying. You can't move. Is this death?"
+    }    
+    nextState {
+      name:"aliveState",
+      whenInput:"yes",
+      narration:"You stumble and crawl to your knees. You slowly nod your head."
+    }
+  }
+}

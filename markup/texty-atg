@@ -1,0 +1,21 @@
+-- Adventure { openingText:"blah blah", <states definitions> }
+<TEXTY>       => Adventure { <OPENINGTEXT>, <STATES> }
+-- openingText:"" OR openingText:"This is some text"
+<OPENINGTEXT> => openingText:<CHARSTRING>
+-- "" OR "A" OR "ABCD"
+<CHARSTRING>  => "<CHARS>
+<CHARS>       => CHAR <CHARS>
+<CHARS>       => "
+-- <STATE> <STATE> or <STATE> <STATE> <STATE> etc.
+<STATES>      => <STATE> <STATES>
+<STATES>      => <STATE>
+-- State "Name of state" { openingText:"In the state" } OR 
+-- State "Name of state" { openingText:"In the state", nextState { <next state definition> } } OR
+-- State "Name of state" { openingText:"In the state", nextState { <next state definition> } } OR
+-- State "Name of state" { openingText:"In the state", isFirstState:true, nextState { <next state definition> } } etc.
+<STATE>       => State <CHARSTRING> { <OPENINGTEXT> <FIRSTSTATE> <NEXTSTATES> }
+-- isFirstState:true <definition of following states> or empty 
+<FIRSTSTATE>  => , isFirstState:true <NEXTSTATES>
+<FIRSTSTATE>  => empty
+<NEXTSTATES>  => , nextState { name:<CHARSTRING>, whenInput:<CHARSTRING>, narration:<CHARSTRING> } <NEXTSTATES>
+<NEXTSTATES>  => empty
