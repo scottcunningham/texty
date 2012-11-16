@@ -6,4 +6,15 @@ since I wrote some!
 State initialisation is still rather clunky, but I'm hoping to fix this if
 I ever look at this code again. :)
 
-To-do: To ease initialisation, devise a small mark-up language and parse it. Or maybe use XML or JSON or similar.
+To ease initialisation, devise a small mark-up language and parse it. Or maybe use XML or JSON or similar.
+
+To-do:
+- Add option to enable hints
+- Add textyOutput for both narration and dialogue, and textyInput for input - done
+    - Possibly abstract out IO so that there could be textyCLIO and textyGUIIO - done
+- Design parser
+- Design mark-up language
+    - Design grammar
+    - coco/r or parsing manually?
+    - Comment, comment, comment
+
